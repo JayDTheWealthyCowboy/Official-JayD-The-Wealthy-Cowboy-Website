@@ -151,24 +151,25 @@ export default function CreditVideoAnalysisPage() {
                         <div className="w-24 h-px bg-gold-primary/50 mx-auto mt-6" />
                     </div>
 
-                    {/* ─── PASTE YOUR GHL FORM EMBED CODE BELOW ─── */}
-                    <div className="bg-depth-vignette border border-white/5 p-8 min-h-[400px] flex items-center justify-center">
-                        <div className="text-center space-y-3">
-                            <p className="text-gold-primary text-xs font-bold tracking-[0.3em] uppercase">
-                                Form Coming Soon
-                            </p>
-                            <p className="text-text-secondary font-inter text-sm">
-                                GoHighLevel embed goes here — swap this block with your iframe once the form is built.
-                            </p>
-                        </div>
-                        {/* REPLACE ABOVE WITH:
-                        <iframe
-                            src="https://YOUR-GHL-FORM-URL"
-                            className="w-full min-h-[600px] border-0"
-                            loading="lazy"
-                        />
-                        */}
-                    </div>
+                    {/* ─── GHL FORM EMBED ─── */}
+                    <iframe
+                        src="https://links.jaydthewealthycowboy.com/widget/form/dJyU4J67BiYA4rYuQxew"
+                        style={{ width: "100%", height: "1517px", border: "none", borderRadius: "3px" }}
+                        id="inline-dJyU4J67BiYA4rYuQxew"
+                        data-layout="{'id':'INLINE'}"
+                        data-trigger-type="alwaysShow"
+                        data-trigger-value=""
+                        data-activation-type="alwaysActivated"
+                        data-activation-value=""
+                        data-deactivation-type="neverDeactivate"
+                        data-deactivation-value=""
+                        data-form-name="Form 12"
+                        data-height="1517"
+                        data-layout-iframe-id="inline-dJyU4J67BiYA4rYuQxew"
+                        data-form-id="dJyU4J67BiYA4rYuQxew"
+                        title="Credit Video Analysis Form"
+                    />
+                    <script src="https://links.jaydthewealthycowboy.com/js/form_embed.js" />
                     {/* ─── END GHL FORM EMBED ─── */}
 
                     <p className="text-text-muted font-inter text-xs text-center mt-6 leading-relaxed">
