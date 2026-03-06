@@ -10,7 +10,7 @@ export default function ServicesPage() {
             strategy: "We review your current credit report, identify visible negative items, and explain which repair package fits your situation.",
             result: "Michael went from denied to mortgage-ready within 90 days in our Gold Tier program.",
             action: "Book your Free 15-Minute Credit Consultation today.",
-            cta: "GET A FREE CREDIT CONSULTATION",
+            cta: "GET A FREE PHONE CONSULTATION",
             variant: "primary" as const,
             href: "/schedule"
         },
