@@ -44,6 +44,7 @@ const Header = () => {
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Services", href: "/services" },
+    { name: "Free Video Analysis", href: "/credit-video-analysis" },
     { name: "Schedule", href: "/schedule" },
     { name: "Terms", href: "/terms" },
     { name: "Privacy", href: "/privacy" },
@@ -85,7 +86,7 @@ const Header = () => {
           {/* Desktop CTA — hidden on mobile */}
           <div className="hidden lg:flex items-center space-x-4">
             <Button variant="primary" size="md" href="/schedule">
-              GET A FREE CREDIT CONSULTATION
+              GET A FREE PHONE CONSULTATION
             </Button>
           </div>
 
@@ -148,7 +149,7 @@ const Header = () => {
               href="/schedule"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              GET A FREE CREDIT CONSULTATION
+              GET A FREE PHONE CONSULTATION
             </Button>
           </div>
         </nav>
