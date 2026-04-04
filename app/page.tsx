@@ -3,7 +3,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/Button";
 import { Section, Container } from "@/components/LayoutUtils";
-import { Check, ChevronDown, ChevronUp, Shield, Target, TrendingUp, Users } from "lucide-react";
+import Link from "next/link";
+import { Check, ChevronDown, ChevronUp, Shield, Target, TrendingUp, Users, ArrowRight } from "lucide-react";
 import { useState } from "react";
 
 // ── FAQ DATA ────────────────────────────────────────────────────────────────
@@ -115,7 +116,7 @@ export default function Home() {
               transition={{ duration: 0.6 }}
               className="text-gold-primary text-xs font-bold tracking-[0.5em] uppercase block"
             >
-              CREDIT REPAIR + FUNDING STRATEGY
+              CREDIT CONSULTING + FUNDING STRATEGY
             </motion.span>
 
             {/* Headline */}
@@ -125,9 +126,9 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="text-3xl md:text-5xl lg:text-6xl font-trajan text-white leading-[1.15] text-glow uppercase tracking-[0.15em]"
             >
-              Fix your credit profile<br />
-              and position yourself<br />
-              <span className="text-gold-primary">for real approvals.</span>
+              Stop guessing.<br />
+              Get positioned<br />
+              <span className="text-gold-primary">before you apply.</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -137,7 +138,7 @@ export default function Home() {
               transition={{ duration: 1, delay: 0.3 }}
               className="font-inter text-lg md:text-xl text-text-secondary max-w-2xl mx-auto leading-relaxed"
             >
-              If your score starts with a 4, 5, or 6 — or you keep getting denied — I help you find what is hurting your file, clean it up, rebuild it the right way, and move toward better approvals and stronger funding options.
+              Credit consulting, funding positioning, and approval-readiness strategy for entrepreneurs, homebuyers, and serious consumers who want a cleaner file and a stronger path forward.
             </motion.p>
 
             {/* Dual CTA */}
@@ -256,23 +257,23 @@ export default function Home() {
             {[
               {
                 step: "01",
-                title: "Review the full picture",
-                desc: "We look at your report, your negative items, your score factors, and the patterns that are holding you back."
+                title: "Book or submit",
+                desc: "Start with a free consultation or submit your information for a free credit video analysis. No commitment required."
               },
               {
                 step: "02",
-                title: "Build the game plan",
-                desc: "We identify what needs attention first, what can be challenged, and what needs to be rebuilt to strengthen your profile."
+                title: "Full profile review",
+                desc: "I review your credit report — negative items, score factors, inaccuracies, and the patterns that are holding you back from approvals."
               },
               {
                 step: "03",
-                title: "Take action",
-                desc: "Depending on the path you choose, we guide the process, document the issues, and help move your profile in the right direction."
+                title: "Get your strategy",
+                desc: "You receive a clear breakdown of the problems, a realistic plan for what can be addressed, and direction on which service fits your situation."
               },
               {
                 step: "04",
-                title: "Position for approvals",
-                desc: "Once the file is stronger, the goal is not just a cleaner report \u2014 it is better approval odds, better terms, and better funding opportunities."
+                title: "Move forward",
+                desc: "Choose the right service path — from a tailored blueprint to full done-for-you consulting — and start building toward stronger approvals and funding readiness."
               },
             ].map((item, idx) => (
               <motion.div
@@ -338,6 +339,12 @@ export default function Home() {
           <p className="text-text-muted font-inter text-xs text-center mt-8">
             Every file is different. Results vary. These examples are not a guarantee of what any individual will receive.
           </p>
+
+          <div className="text-center mt-10">
+            <Link href="/reviews" className="inline-flex items-center gap-2 text-gold-primary font-inter text-sm font-semibold tracking-widest uppercase hover:text-gold-bright transition-colors">
+              See more client results <ArrowRight size={14} />
+            </Link>
+          </div>
         </Container>
       </Section>
 
@@ -354,7 +361,10 @@ export default function Home() {
                 I built this brand for people who are tired of getting bad advice, vague answers, and fake promises.
               </p>
               <p className="text-text-secondary font-inter text-base leading-relaxed">
-                My job is to look at the file, tell the truth, find what is hurting it, and help build a stronger path forward.
+                My job is to look at the file, tell the truth, find what is hurting it, and help build a stronger path forward. If there is nothing worth fixing, I will tell you that too.
+              </p>
+              <p className="text-text-secondary font-inter text-base leading-relaxed">
+                The goal is to identify what is actually holding you back before you keep making moves. Not every profile needs the same solution — and not every profile needs every service.
               </p>
               <p className="text-text-secondary font-inter text-base leading-relaxed">
                 No fluff. No mystery. No pressure.<br />
@@ -452,6 +462,14 @@ export default function Home() {
               <Button href="/credit-video-analysis" variant="gold" size="lg">
                 GET FREE VIDEO ANALYSIS
               </Button>
+            </div>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center pt-2">
+              <Link href="/services" className="text-text-secondary font-inter text-sm tracking-widest uppercase hover:text-gold-primary transition-colors">
+                Explore Services
+              </Link>
+              <Link href="/reviews" className="text-text-secondary font-inter text-sm tracking-widest uppercase hover:text-gold-primary transition-colors">
+                See Client Results
+              </Link>
             </div>
           </div>
         </Container>

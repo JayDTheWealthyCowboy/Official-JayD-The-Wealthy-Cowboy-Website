@@ -1,10 +1,13 @@
 import { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Section, Container } from "@/components/LayoutUtils";
+import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Services | JayD The Wealthy Cowboy\u2122",
-  description: "Explore credit consultations, funding evaluations, business credit planning, and specialty services designed to help you move forward.",
+  title: "Services | JayD The Wealthy Cowboy™",
+  description:
+    "Explore credit consultations, funding evaluations, business credit planning, and specialty services designed to help you move forward.",
 };
 
 const personalCredit = [
@@ -16,19 +19,22 @@ const personalCredit = [
       "Basic review of visible negative issues",
       "Direction on the best next step",
     ],
+    benefit: "Low-friction starting point. Find out what is blocking your progress before spending anything.",
     cta: "BOOK FREE CONSULTATION",
     variant: "primary" as const,
     href: "/schedule",
   },
   {
     title: "PRO CREDIT CONSULTATION",
+    subtitle: "$47 Credit Blueprint",
     bestFor: "People who want a deeper breakdown of what is possible and what needs to change.",
     bullets: [
       "30-minute strategic review",
       "Personalized rebuild direction",
       "Realistic discussion of next steps",
     ],
-    cta: "BOOK PRO CONSULTATION",
+    benefit: "Stop guessing. Get a tailored plan that is stronger than generic free advice and built around your actual file.",
+    cta: "GET THE BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/xkxBB",
   },
@@ -40,6 +46,7 @@ const personalCredit = [
       "Built around your report",
       "Designed for a more serious challenge process",
     ],
+    benefit: "A stronger dispute approach than templates you find online — built specifically for what is on your file.",
     cta: "ORDER DIY PACK",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/VOJ0O",
@@ -49,13 +56,15 @@ const personalCredit = [
 const fundingBusiness = [
   {
     title: "ELITE FUNDING EVALUATION",
-    bestFor: "People with decent credit who still are not accessing the level of funding they want.",
+    subtitle: "$97 Funding Blueprint",
+    bestFor: "Serious people preparing for capital access who want to know where they stand before applying.",
     bullets: [
       "Funding-readiness review",
       "Approval positioning strategy",
       "Smarter application direction",
     ],
-    cta: "APPLY FOR FUNDING",
+    benefit: "Stop applying blind. Get positioned properly so lenders see a stronger applicant — not just a higher score.",
+    cta: "GET THE FUNDING BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/AkWj",
   },
@@ -67,6 +76,7 @@ const fundingBusiness = [
       "Funding roadmap",
       "Approval-focused recommendations",
     ],
+    benefit: "Build business credibility that lenders take seriously. Not just a score — real positioning for real capital.",
     cta: "BUILD YOUR BLUEPRINT",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/l5r55",
@@ -79,9 +89,10 @@ const advancedSpecialty = [
     bestFor: "People who want a more established business starting point for future funding positioning.",
     bullets: [
       "Aged entity solution",
-      "Built to strengthen presentation",
+      "Built to strengthen business presentation",
       "Designed for serious buyers only",
     ],
+    benefit: "A business credibility and presentation tool — not a shortcut, but a positioning advantage for the right buyer.",
     cta: "SECURE SHELF COMPANY",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/Z8pZ5",
@@ -94,6 +105,7 @@ const advancedSpecialty = [
       "Structured response support",
       "Built to help you respond correctly and fast",
     ],
+    benefit: "When a collector comes with paperwork, you need to respond with the right documentation — not panic.",
     cta: "ORDER DEFENSE DOCS",
     variant: "gold" as const,
     href: "https://www.fanbasis.com/agency-checkout/Jaydthewealthycowboy/68L67",
@@ -106,7 +118,12 @@ function ServiceCard({ service }: { service: typeof personalCredit[0] }) {
       <div className="absolute top-0 left-0 w-1 h-0 group-hover:h-full bg-gold-primary transition-all duration-500" />
 
       <div className="flex-grow space-y-5">
-        <h3 className="text-lg md:text-xl text-gold-primary tracking-widest leading-tight">{service.title}</h3>
+        <div>
+          <h3 className="text-lg md:text-xl text-gold-primary tracking-widest leading-tight">{service.title}</h3>
+          {"subtitle" in service && service.subtitle && (
+            <p className="text-text-muted font-inter text-xs tracking-widest uppercase mt-1">{service.subtitle}</p>
+          )}
+        </div>
 
         <div className="space-y-1">
           <p className="text-text-muted font-inter text-[10px] font-bold tracking-[0.2em] uppercase">Best for:</p>
@@ -121,6 +138,12 @@ function ServiceCard({ service }: { service: typeof personalCredit[0] }) {
             </li>
           ))}
         </ul>
+
+        {"benefit" in service && service.benefit && (
+          <p className="text-text-secondary/80 font-inter text-xs leading-relaxed italic border-l-2 border-gold-primary/20 pl-4">
+            {service.benefit}
+          </p>
+        )}
       </div>
 
       <div className="mt-8 pt-6 border-t border-white/10">
@@ -138,6 +161,9 @@ export default function ServicesPage() {
       {/* ── PAGE HEADER ─────────────────────────────────────────── */}
       <Section className="pt-20 pb-10">
         <Container className="text-center max-w-3xl mx-auto">
+          <span className="text-gold-primary text-xs font-bold tracking-[0.5em] uppercase block mb-6">
+            SERVICES
+          </span>
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white mb-6 leading-tight">
             Choose the path that fits your current needs.
           </h1>
@@ -207,6 +233,24 @@ export default function ServicesPage() {
             {advancedSpecialty.map((s) => (
               <ServiceCard key={s.title} service={s} />
             ))}
+          </div>
+        </Container>
+      </Section>
+
+      {/* ── PRICING CONTEXT + SOCIAL PROOF LINK ──────────────────── */}
+      <Section className="py-16">
+        <Container className="max-w-3xl mx-auto text-center space-y-6">
+          <p className="text-text-secondary font-inter text-sm leading-relaxed">
+            Investment varies by profile and service level. Details are shared during your consultation.
+          </p>
+          <div className="w-16 h-px bg-gold-primary/20 mx-auto" />
+          <p className="text-text-muted font-inter text-xs leading-relaxed">
+            We focus on real issues, real documentation, and the right next steps. Not every profile needs the same solution.
+          </p>
+          <div className="pt-2">
+            <Link href="/reviews" className="inline-flex items-center gap-2 text-gold-primary font-inter text-sm font-semibold tracking-widest uppercase hover:text-gold-bright transition-colors">
+              See client results <ArrowRight size={14} />
+            </Link>
           </div>
         </Container>
       </Section>
